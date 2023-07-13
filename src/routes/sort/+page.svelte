@@ -10,6 +10,7 @@
 	let chunks = 2;
 	let jobAccepted = false;
 	let results = [];
+	let jobFinished = false;
 	let sortedSet = [];
 	/**
 	 * @type {any[]}
@@ -48,6 +49,7 @@
 		/* PROCESS RESULTS */
 		let resultSet = await job.exec();
 		resultSet = Array.from(resultSet);
+		jobFinished = true;
 
 		// @ts-ignore
 		sortedSet = chunkSort(resultSet);
@@ -89,7 +91,7 @@
 		<p>{result}</p>
 	{/each}
 
-	{#if sortedSet.length !== 0}
+	{#if jobFinished === true}
 		<h2 class="text-2xl font-bold">Step 4: Take Slice Results and Sort Globally</h2>
 		<p>{sortedSet}</p>
 	{/if}

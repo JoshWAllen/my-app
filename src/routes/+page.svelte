@@ -4,5 +4,5 @@
 
 <div class="p-4">
 	<h1>Welcome to DCP Visualizer</h1>
-	<Button>Hello</Button>
+	<Button href="/sort">Sort Demo</Button>
 </div>
